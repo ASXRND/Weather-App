@@ -61,7 +61,7 @@ final class ViewController: UIViewController {
     //MARK: - Info Label Top Left
     let infoLabel: UILabel = {
         var label = UILabel()
-        label.text = "Ростов-На-Дону, Росиия"
+        label.text = "Суббота, 4 Февраля 2023"
         label.textColor = .white
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 14, weight: .regular)
@@ -79,12 +79,44 @@ final class ViewController: UIViewController {
         return label
     }()
 
-    //MARK: - Info Label Image
+    //MARK: - Info Label Image Cloud
     let infoLabelImage: UIImageView = {
         var imageView = UIImageView()
         imageView.image = UIImage(named: "infoLabelImage")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+
+    //MARK: - Info Label Temperature
+    let temperatureLabel: UILabel = {
+        var label = UILabel()
+        label.text = "18 ℃"
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    //MARK: - Info Label City
+    let infoLabelCity: UILabel = {
+        var label = UILabel()
+        label.text = "Ростов-На-Дону, Рост-обл"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    //MARK: - Info Label Timezone
+    let labelTimezone: UILabel = {
+        var label = UILabel()
+        label.text = "Часовой пояс: GMT+3"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
 }
@@ -116,6 +148,9 @@ private extension ViewController {
         view.addSubview(infoLabel)
         view.addSubview(timeLabel)
         view.addSubview(infoLabelImage)
+        view.addSubview(temperatureLabel)
+        view.addSubview(infoLabelCity)
+        view.addSubview(labelTimezone)
     }
 }
 //MARK: - Layout
@@ -160,6 +195,21 @@ private extension ViewController {
             infoLabelImage.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 29),
             infoLabelImage.heightAnchor.constraint(equalToConstant: 56),
             infoLabelImage.widthAnchor.constraint(equalToConstant: 51),
+
+            temperatureLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 120 ),
+            temperatureLabel.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 15),
+            temperatureLabel.heightAnchor.constraint(equalToConstant: 50),
+            temperatureLabel.widthAnchor.constraint(equalToConstant: 50),
+
+            infoLabelCity.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 120 ),
+            infoLabelCity.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: -7),
+            infoLabelCity.heightAnchor.constraint(equalToConstant: 16),
+            infoLabelCity.widthAnchor.constraint(equalToConstant: 200),
+
+            labelTimezone.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 45 ),
+            labelTimezone.topAnchor.constraint(equalTo: infoLabelCity.bottomAnchor, constant: 33),
+            labelTimezone.heightAnchor.constraint(equalToConstant: 16),
+            labelTimezone.widthAnchor.constraint(equalToConstant: 200),
 
         ])
 
