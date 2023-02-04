@@ -68,7 +68,7 @@
 			children = (
 				1E61A95D29895ADA003F95B2 /* SviftUI */,
 				1E61A96029895CAC003F95B2 /* Extension */,
-				1E03FD4329894C2200CB4F16 /* Views */,
+				1E03FD4329894C2200CB4F16 /* Controllers */,
 				1E03FD3129894BC100CB4F16 /* ViewController.swift */,
 				1E03FD3329894BC100CB4F16 /* Main.storyboard */,
 				1E03FD4129894BF300CB4F16 /* Resources */,
@@ -96,14 +96,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		1E03FD4329894C2200CB4F16 /* Views */ = {
+		1E03FD4329894C2200CB4F16 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				1E61A963298ACA95003F95B2 /* BottonView */,
 				1E61A964298ACAE7003F95B2 /* ImageView */,
 				1E61A965298ACB20003F95B2 /* View */,
 			);
-			path = Views;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1E61A95D29895ADA003F95B2 /* SviftUI */ = {

@@ -20,9 +20,6 @@ final class ViewController: UIViewController {
     //MARK: - Settings Info View
     let infoView: SettingsInfoView = {
         var infoView = SettingsInfoView(frame: CGRect(x: 0, y: 0, width: 353, height: 193))
-        infoView.layer.shadowColor = UIColor.blue.cgColor
-        infoView.layer.shadowOpacity = 0.5
-        infoView.layer.shadowOffset = CGSizeMake(0.0, 3.0)
         infoView.translatesAutoresizingMaskIntoConstraints = false
         return infoView
     }()
@@ -72,15 +69,24 @@ final class ViewController: UIViewController {
         return label
     }()
     //MARK: - Info Label Time Right
-        let timeLabel: UILabel = {
-            var label = UILabel()
-            label.text = "3.30 PM"
-            label.textColor = .white
-            label.numberOfLines = 0
-            label.font = .systemFont(ofSize: 14, weight: .regular)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
+    let timeLabel: UILabel = {
+        var label = UILabel()
+        label.text = "3.30 PM"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    //MARK: - Info Label Image
+    let infoLabelImage: UIImageView = {
+        var imageView = UIImageView()
+        imageView.image = UIImage(named: "infoLabelImage")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
 }
 //___метот позволяет вызывать canvas во ViewController
 struct  ViewControllerProvider: PreviewProvider {
@@ -109,6 +115,7 @@ private extension ViewController {
         view.addSubview(infoView)
         view.addSubview(infoLabel)
         view.addSubview(timeLabel)
+        view.addSubview(infoLabelImage)
     }
 }
 //MARK: - Layout
@@ -148,6 +155,11 @@ private extension ViewController {
             timeLabel.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 27),
             timeLabel.heightAnchor.constraint(equalToConstant: 16),
             timeLabel.widthAnchor.constraint(equalToConstant: 100),
+
+            infoLabelImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 52 ),
+            infoLabelImage.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 29),
+            infoLabelImage.heightAnchor.constraint(equalToConstant: 56),
+            infoLabelImage.widthAnchor.constraint(equalToConstant: 51),
 
         ])
 
